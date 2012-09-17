@@ -40,7 +40,7 @@ if (!jQuery.support.cors && window.XDomainRequest) {
 							if (userType === 'json') {
 								try {
 									responses.json = JSON.parse(xdr.responseText);
-								} catch(e) {
+								} catch(e1) {
 									status.code = 500;
 									status.message = 'parseerror';
 									//throw 'Invalid JSON: ' + xdr.responseText;
@@ -50,7 +50,7 @@ if (!jQuery.support.cors && window.XDomainRequest) {
 								doc.async = false;
 								try {
 									doc.loadXML(xdr.responseText);
-								} catch(e) {
+								} catch(e2) {
 									doc = undefined;
 								}
 								if (!doc || !doc.documentElement || doc.getElementsByTagName('parsererror').length) {
